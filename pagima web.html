@@ -1,0 +1,294 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TECNOVIX — Innovación segura, soluciones a tu medida</title>
+  <meta name="description" content="Tecnovix: software a medida, redes seguras, soporte 24/7, capacitación digital y ciberseguridad." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f182a;
+      --muted:#9fb0c9;
+      --brand:#00c2a8;
+      --brand-2:#2d7dff;
+      --text:#eaf2ff;
+      --chip:#14223b;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(45,125,255,.15), transparent 60%),
+        radial-gradient(900px 600px at 110% 10%, rgba(0,194,168,.14), transparent 60%),
+        var(--bg);
+      line-height:1.5;
+    }
+    a{color:var(--brand-2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1150px;margin-inline:auto;padding:20px}
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(180deg, rgba(11,18,32,.85), rgba(11,18,32,.55));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:44px;height:44px;object-fit:contain;border-radius:10px;box-shadow:var(--shadow)}
+    .brand h1{font-size:1.05rem;margin:0;letter-spacing:.12em}
+    .nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    .nav a{color:var(--text);opacity:.9}
+    .btn{
+      display:inline-block;padding:.8rem 1.1rem;border-radius:999px;
+      background:linear-gradient(90deg, var(--brand), var(--brand-2));
+      color:#041024;font-weight:700;box-shadow:var(--shadow);border:none;cursor:pointer
+    }
+    .btn.outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.18)}
+    /* Hero */
+    .hero{padding:64px 0}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+    .kicker{display:inline-flex;gap:8px;align-items:center;
+      background:var(--chip);padding:.35rem .6rem;border-radius:999px;
+      font-size:.85rem;color:var(--muted);border:1px solid rgba(255,255,255,.06)
+    }
+    .hero h2{font-size:clamp(1.8rem, 3.5vw + .8rem, 3rem);line-height:1.1;margin:.8rem 0}
+    .hero p{color:var(--muted);max-width:60ch}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .mock{background:linear-gradient(180deg,#0c1730,#0e203f);border-radius:var(--radius);
+      padding:22px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .mock-inner{aspect-ratio:16/10;border-radius:12px;background:
+      linear-gradient(120deg, rgba(45,125,255,.22), rgba(0,194,168,.18)),
+      radial-gradient(400px 200px at 20% 10%, rgba(45,125,255,.25), transparent 60%),
+      #0b1a34;
+      display:grid;place-items:center;
+      border:1px dashed rgba(255,255,255,.18);
+      color:var(--muted);text-align:center;padding:18px;
+    }
+    /* Sections */
+    section{padding:40px 0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 .35rem 0}
+    .muted{color:var(--muted)}
+    .list{display:grid;gap:8px;margin:0;padding-left:18px}
+    /* Timeline */
+    .timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .step{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
+    .step small{color:var(--muted)}
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;color:var(--muted)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .pill{background:var(--chip);border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px;color:var(--muted);display:inline-block;margin:4px 6px 0 0}
+    @media (max-width: 950px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .timeline{grid-template-columns:1fr 1fr 1fr}
+      .values{grid-template-columns:1fr 1fr}
+      .grid-2{grid-template-columns:1fr}
+    }
+    @media (max-width: 560px){
+      .cards{grid-template-columns:1fr}
+      .timeline{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="imagenes.jpg/logo.jpg" alt="Logo TECNOVIX" />
+        <h1>TECNOVIX</h1>
+      </div>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#proyecto">Proyecto</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker">Tecnología • Seguridad • Soporte</span>
+          <h2>Innovación segura, soluciones a tu medida</h2>
+          <p>Software a medida, redes seguras, soporte 24/7, capacitación digital y consultoría en ciberseguridad para impulsar tu transformación digital.</p>
+          <div class="cta-row">
+            <a class="btn" href="#servicios">Conoce nuestros servicios</a>
+            <a class="btn outline" href="#contacto">Habla con un asesor</a>
+          </div>
+          <p class="muted" style="margin-top:10px">Proyecto: <strong>Mantenimiento preventivo, correctivo e inventario — Sala 101</strong></p>
+        </div>
+        <aside class="mock" aria-hidden="true">
+          <div class="mock-inner">
+            <div>
+              <p class="muted-1"> <img src="imagenes.jpg/idea.jpg" alt="idea tecnovix"
+                    width: height="275">
+                <style>
+                  .muted-1{
+                    margin-top: 0x;
+                    margin-left: 0px;
+                    margin-bottom: 0px;
+                    margin-right: 0px;
+                  }
+                </style>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h2>Servicios</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Desarrollo de software</h3>
+            <p class="muted">Aplicaciones personalizadas con Java, Python y JavaScript; bases de datos SQL/NoSQL y arquitectura escalable.</p>
+          </article>
+          <article class="card">
+            <h3>Redes e infraestructura</h3>
+            <p class="muted">LAN/WAN, WiFi seguro, cableado estructurado y monitoreo para conectividad continua.</p>
+          </article>
+          <article class="card">
+            <h3>Soporte técnico 24/7</h3>
+            <p class="muted">Help Desk con incidencias, acceso remoto (AnyDesk/TeamViewer) y mantenimientos preventivos/correctivos.</p>
+          </article>
+          <article class="card">
+            <h3>Capacitación digital</h3>
+            <p class="muted">Cursos, manuales y certificación de competencias con Moodle o Google Classroom.</p>
+          </article>
+          <article class="card">
+            <h3>Ciberseguridad</h3>
+            <p class="muted">Firewalls, antivirus corporativos, auditorías, respaldos en la nube y recuperación de datos.</p>
+          </article>
+          <article class="card">
+            <h3>Sensibilización tecnológica</h3>
+            <p class="muted">Campañas y charlas para el cuidado de equipos y uso responsable de la tecnología.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="container grid-2">
+        <div class="card">
+          <h2>Nosotros</h2>
+          <p class="muted">Tecnovix nació como iniciativa académica y profesional para brindar soluciones tecnológicas confiables e innovadoras a empresas e instituciones. Hoy nos proyectamos como una empresa emergente comprometida con la calidad y la seguridad.</p>
+          <div>
+            <span class="pill">Misión: Desarrollar soluciones tecnológicas personalizadas que optimicen los procesos de empresas y personas, ofreciendo software a medida, instalación de redes y soporte técnico especializado, con el objetivo de impulsar su crecimiento en la era digital.</span>
+            <span class="pill">Visión: Ser reconocidos a nivel nacional como líderes en innovación tecnológica, brindando servicios integrales que conecten a nuestros clientes con el futuro, garantizando calidad, seguridad y eficiencia en cada proyecto.</span>
+          </div>
+          <h3>Valores</h3>
+          <div class="values">
+            <span class="pill">Innovación</span>
+            <span class="pill">Compromiso 24/7</span>
+            <span class="pill">Responsabilidad</span>
+            <span class="pill">Confianza</span>
+            <span class="pill">Colaboración</span>
+            <span class="pill">Excelencia</span>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Equipo</h2>
+          <ul class="list">
+            <li><strong>Edwin Camilo Bernal Guay</strong> — Gerente General / Director del Proyecto</li>
+            <br>
+            <li><strong>Julian Santiago Rozor Soler</strong> — Responsable de Tecnología y Diseño</li>
+            <br>
+            <li><strong>Wilson Santiago Romero Luna</strong> — Marketing y Finanzas</li>
+            <br>
+            <li><strong>Broyner Makeyn Cicua Castañeda</strong> — Calidad y Soporte</li>
+          </ul>
+          <br>
+          <p class="muted">IE: Braulio Gonzales — Sede Campestre</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyecto">
+      <div class="container">
+        <h2>Plan y Cronograma</h2>
+        <div class="timeline">
+          <div class="step"><small>Fase 1</small><br><strong>Diagnóstico</strong><br><span class="muted">Levantamiento y requerimientos</span></div>
+          <div class="step"><small>Fase 2</small><br><strong>Diseño</strong><br><span class="muted">Propuesta y prototipos</span></div>
+          <div class="step"><small>Fase 3</small><br><strong>Desarrollo</strong><br><span class="muted">Software e infraestructura</span></div>
+          <div class="step"><small>Fase 4</small><br><strong>Pruebas</strong><br><span class="muted">Ajustes y validación</span></div>
+          <div class="step"><small>Fase 5</small><br><strong>Capacitación</strong><br><span class="muted">Buenas prácticas y seguridad</span></div>
+          <div class="step"><small>Fase 6-7</small><br><strong>Puesta en marcha</strong><br><span class="muted">Soporte 24/7 y seguimiento</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container grid-2">
+        <div class="card">
+          <h2>Contacto</h2>
+          <p class="muted">¿Hablamos de tu proyecto? Escríbenos y te respondemos pronto.</p>
+          <form onsubmit="event.preventDefault(); alert('Gracias, pronto te contactaremos.');" aria-label="Formulario de contacto">
+            <label>Nombres y Apellidos<br><input required type="text" placeholder="Tu nombre y apellido." style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0e1a2f;color:var(--text)"></label><br><br>
+            <label>Correo<br><input required type="email" placeholder="tunombre@correo.com" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0e1a2f;color:var(--text)"></label><br><br>
+            <label>Mensaje<br><textarea rows="4" placeholder="Cuéntanos qué necesitas." style="width:100%;padding:50px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0e1a2f;color:var(--text)"></textarea></label><br><br>
+            <button class="btn" type="submit">Enviar</button>
+          </form>
+
+           😎
+        </div>
+        <div class="card">
+          <aside class="mock" aria-hidden="true">
+          <div class="mock-inner">
+            <div>
+              <p class="muted-1"> <img src="imagenes.jpg/organigrama.jpg" alt="organigrama"
+                    width: height="400">
+                <style>
+                  .muted-1{
+                    margin-top: 0x;
+                    margin-left: 0px;
+                    margin-bottom: 0px;
+                    margin-right: 0px;
+                  }
+                </style>
+                  <p><strong>organigrama tecnovix</strong></p>
+            </div>
+          </div>
+        </aside>
+          <h2>Tecnologías</h2>
+          <ul class="list">
+            <li>Lenguajes: Java, Python, JavaScript (Node.js/React)</li>
+            <li>Bases de datos: MySQL, PostgreSQL, MongoDB</li>
+            <li>DevOps: GitHub, Docker, Postman</li>
+            <li>Soporte: AnyDesk, TeamViewer</li>
+            <li>Nube: AWS, Google Cloud, Azure</li>
+            <li>Seguridad: Fortinet, Kaspersky, Bitdefender, Wireshark</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <small>© <span id="y"></span> Tecnovix. Todos los derechos reservados.</small>
+        <small>Hecho con 💻,🙎 y ☕</small>
+      </div>
+      😎
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
+
